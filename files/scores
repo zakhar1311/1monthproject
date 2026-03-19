@@ -1,0 +1,30 @@
+score = []
+while True:
+    q = int(input("1.Add score\n2.See top 3\n3.See the best\n4.See average scote\n5.Exit\n"))
+    if q == 1:
+        a = int(input("How many scores?\n"))
+        score.append(a)
+    elif q == 2:
+        if len(score) == 0:
+            print("there are no scores")
+        else:
+            y = sorted(score, reverse=True)
+            for i in y[:3]:
+                print(i)
+    elif q == 3:
+        if len(score) == 0:
+            print("There are no scores")
+        else:
+            print("The best score:", max(score))
+        
+    elif q == 4:
+        if len(score) == 0:
+            print("there are no scores")
+        else:
+            r = len(score) 
+            e = sum(score) / r
+            print(f"average score: {e}")
+
+    elif q == 5:
+        print("Goodbye!")
+        break
